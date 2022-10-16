@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="widget" native="true">
+  <widget class="QWidget" name="bgwidget" native="true">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -26,8 +26,29 @@
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgba(16,30,41,240);</string>
+    <string notr="true">
+background-color:rgba(16,30,41,240);</string>
    </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>40</y>
+      <width>331</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: italic 36pt &quot;Calibri&quot;;
+color:rgb(255,255,255);</string>
+    </property>
+    <property name="text">
+     <string>Welcome</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
