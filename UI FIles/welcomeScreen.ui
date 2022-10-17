@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
+    <width>1131</width>
     <height>668</height>
    </rect>
   </property>
@@ -58,10 +58,10 @@ border-radius:10px;</string>
    <widget class="QLabel" name="infolabel">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>320</x>
       <y>180</y>
-      <width>380</width>
-      <height>41</height>
+      <width>560</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">

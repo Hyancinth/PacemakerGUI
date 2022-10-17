@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="bgwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>801</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(16,30,41,240);</string>
+   </property>
+   <widget class="QLabel" name="errorLabel">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>40</y>
+      <width>300</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: italic 16pt &quot;Calibri&quot;;
+color:red;
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string>Error Message</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="saveProfileBtn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+border: 1px solid white;</string>
+    </property>
+    <property name="text">
+     <string>Save Profile</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>441</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="comStatusLabel">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Communication Status:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="commStatus">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Disconnected</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>441</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="1">
+      <widget class="QLabel" name="lrlValue">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Current Value</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="lrl">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Lower Rate Limit:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLabel" name="aaValue">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Current Value</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLineEdit" name="aaLine">
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255);
+border-radius: 10px;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="0">
+      <widget class="QLabel" name="arp">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>ARP:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="1">
+      <widget class="QLabel" name="arpValue">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Current Value</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="apw">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Atrial Pulse Width:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLabel" name="apwValue">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Current Value</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLineEdit" name="apwLine">
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255);
+border-radius: 10px;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="va">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Ventricular Amplitude:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLineEdit" name="vaLine">
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255);
+border-radius: 10px;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLabel" name="vaValue">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Current Value</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="url">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Upper Rate Limit:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLabel" name="urlValue">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Current Value</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLineEdit" name="lrlLine">
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255);
+border-radius: 10px;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLineEdit" name="urlLine">
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255);
+border-radius: 10px;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="aa">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Atrial Amplitude:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1">
+      <widget class="QLabel" name="vpwValue">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Current Value</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="1">
+      <widget class="QLabel" name="vrpValue">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Current Value</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="0">
+      <widget class="QLineEdit" name="vrpLine">
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255);
+border-radius: 10px;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="0">
+      <widget class="QLineEdit" name="vpwLine">
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255);
+border-radius: 10px;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="vpw">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Ventricular Pulse Width:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="0">
+      <widget class="QLabel" name="vrp">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>VRP:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="0">
+      <widget class="QLineEdit" name="arpLine">
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255);
+border-radius: 10px;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>600</y>
+      <width>241</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="aooBtn">
+       <property name="styleSheet">
+        <string notr="true">font: italic 18pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+border: 1px solid white;</string>
+       </property>
+       <property name="text">
+        <string>AOO</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="vooBtn">
+       <property name="styleSheet">
+        <string notr="true">font: italic 18pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+border: 1px solid white;</string>
+       </property>
+       <property name="text">
+        <string>VOO</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="aaiBtn">
+       <property name="styleSheet">
+        <string notr="true">font: italic 18pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+border: 1px solid white;</string>
+       </property>
+       <property name="text">
+        <string>AAI</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="vviBtn">
+       <property name="styleSheet">
+        <string notr="true">font: italic 18pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+border: 1px solid white;</string>
+       </property>
+       <property name="text">
+        <string>VVI</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>570</y>
+      <width>441</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="pacingModeLabel">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Current Pacing Mode:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="pacingMode">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>AOO</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>10</y>
+      <width>441</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLabel" name="serialNumberLabel">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Board Serial Number:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="serialNumber">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>12345678</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

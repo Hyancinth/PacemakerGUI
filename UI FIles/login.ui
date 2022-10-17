@@ -58,9 +58,9 @@ border-radius:10px;</string>
    <widget class="QLabel" name="infolabel">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>320</x>
       <y>180</y>
-      <width>380</width>
+      <width>560</width>
       <height>41</height>
      </rect>
     </property>
@@ -79,9 +79,9 @@ border-radius:10px;</string>
    <widget class="QPushButton" name="loginBtn">
     <property name="geometry">
      <rect>
-      <x>465</x>
+      <x>450</x>
       <y>570</y>
-      <width>270</width>
+      <width>300</width>
       <height>51</height>
      </rect>
     </property>
@@ -132,7 +132,7 @@ border-radius: 10px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: italic 16pt &quot;Calibri&quot;;
+     <string notr="true">font: italic 14pt &quot;Calibri&quot;;
 color:rgb(255,255,255);
 border-radius:10px;
 background-color: rgba(255, 255, 255, 0);</string>
@@ -151,7 +151,7 @@ background-color: rgba(255, 255, 255, 0);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: italic 16pt &quot;Calibri&quot;;
+     <string notr="true">font: italic 14pt &quot;Calibri&quot;;
 color:rgb(255,255,255);
 border-radius:10px;
 background-color: rgba(255, 255, 255, 0);</string>
@@ -163,9 +163,9 @@ background-color: rgba(255, 255, 255, 0);</string>
    <widget class="QPushButton" name="signupBtn">
     <property name="geometry">
      <rect>
-      <x>465</x>
+      <x>450</x>
       <y>690</y>
-      <width>270</width>
+      <width>300</width>
       <height>51</height>
      </rect>
     </property>
@@ -203,14 +203,14 @@ background-color: rgba(255, 255, 255, 0);</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>465</x>
+      <x>450</x>
       <y>650</y>
-      <width>291</width>
+      <width>340</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: italic 16pt &quot;Calibri&quot;;
+     <string notr="true">font: italic 14pt &quot;Calibri&quot;;
 color:rgb(255,255,255);
 border-radius:10px;
 background-color: rgba(255, 255, 255, 0);</string>

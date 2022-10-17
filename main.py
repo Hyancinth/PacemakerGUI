@@ -9,10 +9,9 @@ class WelcomeScreen(QDialog):
     def __init__(self):
         super(WelcomeScreen, self).__init__()
    
-        loadUi("UI Files/welcomeScreen.ui", self)
+        loadUi("UI Files/welcomeScreen.ui", self) #load welcome screen ui file
         
-        self.loginButton.clicked.connect(self.goToLogin)
-        
+        self.loginButton.clicked.connect(self.goToLogin) 
         self.signupButton.clicked.connect(self.goToSignup)
     
     def goToLogin(self):
@@ -52,6 +51,7 @@ class LoginScreen(QDialog):
             if resultPass == password:
                 print("Successfully logged in.")
                 self.errorLabel.setText("")
+                widget.setCurrentIndex(widget.currentIndex() + 2)
                 
             else:
                 self.errorLabel.setText("Invalid username or password")
@@ -105,7 +105,13 @@ class SignupScreen(QDialog):
         
     def goToLogin(self):
         widget.setCurrentIndex(widget.currentIndex() - 1)
-    
+
+class SystemViewScreen(QDialog):
+    def __init__(self):
+        super(SystemViewScreen, self).__init__()
+        
+        loadUi("UI Files/systemView.ui", self)
+
 if __name__ == "__main__":    
     app = QApplication(sys.argv)
     
@@ -119,6 +125,9 @@ if __name__ == "__main__":
 
     signup = SignupScreen()
     widget.addWidget(signup)
+    
+    systemView = SystemViewScreen()
+    widget.addWidget(systemView)
     
     widget.setFixedHeight(800)
     widget.setFixedWidth(1200)

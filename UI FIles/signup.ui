@@ -79,9 +79,9 @@ border-radius:10px;</string>
    <widget class="QPushButton" name="login_button">
     <property name="geometry">
      <rect>
-      <x>465</x>
+      <x>450</x>
       <y>720</y>
-      <width>270</width>
+      <width>300</width>
       <height>51</height>
      </rect>
     </property>
@@ -132,7 +132,7 @@ border-radius: 10px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: italic 16pt &quot;Calibri&quot;;
+     <string notr="true">font: italic 14pt &quot;Calibri&quot;;
 color:rgb(255,255,255);
 border-radius:10px;
 background-color: rgba(255, 255, 255, 0);</string>
@@ -163,9 +163,9 @@ background-color: rgba(255, 255, 255, 0);</string>
    <widget class="QPushButton" name="signup_button">
     <property name="geometry">
      <rect>
-      <x>465</x>
+      <x>450</x>
       <y>610</y>
-      <width>270</width>
+      <width>300</width>
       <height>51</height>
      </rect>
     </property>
@@ -183,7 +183,7 @@ border-radius:10px;</string>
      <rect>
       <x>450</x>
       <y>570</y>
-      <width>301</width>
+      <width>300</width>
       <height>31</height>
      </rect>
     </property>
@@ -205,12 +205,12 @@ background-color: rgba(255, 255, 255, 0);</string>
      <rect>
       <x>445</x>
       <y>470</y>
-      <width>181</width>
+      <width>300</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: italic 16pt &quot;Calibri&quot;;
+     <string notr="true">font: italic 14pt &quot;Calibri&quot;;
 color:rgb(255,255,255);
 border-radius:10px;
 background-color: rgba(255, 255, 255, 0);</string>
@@ -236,14 +236,14 @@ border-radius: 10px;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>465</x>
+      <x>450</x>
       <y>680</y>
-      <width>291</width>
+      <width>300</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: italic 16pt &quot;Calibri&quot;;
+     <string notr="true">font: italic 14pt &quot;Calibri&quot;;
 color:rgb(255,255,255);
 border-radius:10px;
 background-color: rgba(255, 255, 255, 0);</string>
