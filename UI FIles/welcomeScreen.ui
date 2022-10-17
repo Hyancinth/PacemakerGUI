@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1200</width>
-    <height>800</height>
+    <height>668</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,34 +19,97 @@
      <x>0</x>
      <y>0</y>
      <width>1200</width>
-     <height>800</height>
+     <height>801</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">
-background-color:rgba(16,30,41,240);</string>
+    <string notr="true">background-color:rgba(16,30,41,240);</string>
    </property>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="welcomelabel">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>434</x>
       <y>40</y>
-      <width>331</width>
-      <height>101</height>
+      <width>332</width>
+      <height>120</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">font: italic 36pt &quot;Calibri&quot;;
-color:rgb(255,255,255);</string>
+color:rgb(255,255,255);
+border-radius:10px;</string>
     </property>
     <property name="text">
      <string>Welcome</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="infolabel">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>180</y>
+      <width>380</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: italic 18pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;</string>
+    </property>
+    <property name="text">
+     <string>Login or create a new account</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="loginButton">
+    <property name="geometry">
+     <rect>
+      <x>465</x>
+      <y>390</y>
+      <width>270</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: italic 18pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;</string>
+    </property>
+    <property name="text">
+     <string>Login</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="signupButton">
+    <property name="geometry">
+     <rect>
+      <x>465</x>
+      <y>470</y>
+      <width>270</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: italic 18pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;</string>
+    </property>
+    <property name="text">
+     <string>Signup</string>
     </property>
    </widget>
   </widget>
