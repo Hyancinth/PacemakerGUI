@@ -1,9 +1,11 @@
 from pickletools import uint1
 import sys
+from tkinter import E
 from PyQt5.uic import loadUi
 import PyQt5.QtWidgets as QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication, QWidget, QStackedWidget
 import sqlite3
+import os
 
 class WelcomeScreen(QDialog):
     def __init__(self):
@@ -51,6 +53,9 @@ class LoginScreen(QDialog):
             if resultPass == password:
                 print("Successfully logged in.")
                 self.errorLabel.setText("")
+                
+                self.logCurUser()
+              
                 widget.setCurrentIndex(widget.currentIndex() + 2)
                 
             else:
@@ -58,6 +63,21 @@ class LoginScreen(QDialog):
     
     def goSignup(self):
         widget.setCurrentIndex(widget.currentIndex() + 1)
+    
+    def logCurUser(self):
+        try:
+            with open('curUser.txt', 'a+') as txt:
+                txt.write("name")
+                txt.truncate(0)
+                
+                user = self.usernameLine.text()
+       
+                txt.write(user)
+                
+                txt.close()
+         
+        except Exception as e:
+            print(e)
             
 class SignupScreen(QDialog):
     def __init__(self):
@@ -101,7 +121,32 @@ class SignupScreen(QDialog):
                 conn.commit()
                 conn.close()
             
-            widget.setCurrentIndex(widget.currentIndex() - 1) #go to login screen if successful signup
+                self.createText()
+        
+                widget.setCurrentIndex(widget.currentIndex() - 1) #go to login screen if successful signup
+    
+    def createText(self):
+        uName = self.username_line.text()
+        try:
+            with open('%s.txt' % uName, 'w') as txt:
+                '''
+                    Format of data array 
+                    [0] = Lower Rate Limit
+                    [1] = Upper Rate Limit 
+                    [2] = Atrial Amplitude
+                    [3] = Atrial pulse width
+                    [4] = Ventricular Amplitude
+                    [5] = Ventricular Pulse Width 
+                    [6] = VRP
+                    [7] = ARP
+                    [8] = Serial Number, perhaps this value is obtained from the system view and saved to txt file as the screen loads in
+                '''
+                data = [30, 50, 0, 0.1, 0, 0.1, 150, 150, 12345]
+                for val in data:
+                    txt.write(str(val) + '\n')
+                txt.close()
+        except Exception as e:
+            print(e)
         
     def goToLogin(self):
         widget.setCurrentIndex(widget.currentIndex() - 1)
@@ -111,6 +156,71 @@ class SystemViewScreen(QDialog):
         super(SystemViewScreen, self).__init__()
         
         loadUi("UI Files/systemView.ui", self)
+        self.userData = []
+        with open('curUser.txt', 'r') as txt:
+            loggedUser = txt.readline()
+            txt.close()
+        
+        with open('%s.txt' % loggedUser, 'r') as txt:
+            for line in txt: 
+                self.userData.append(line.strip())
+            txt.close()
+        
+        self.displayParameter()
+        self.saveProfileBtn.clicked.connect(self.updateValues)
+    
+    def displayParameter(self):
+        self.lrlValue.setText(self.userData[0])
+        self.urlValue.setText(self.userData[1])
+        self.aaValue.setText(self.userData[2])
+        self.apwValue.setText(self.userData[3])
+        self.vaValue.setText(self.userData[4])
+        self.vpwValue.setText(self.userData[5])
+        self.vrpValue.setText(self.userData[6])
+        self.arpValue.setText(self.userData[7])
+    
+    def updateValues(self):
+       
+        #First two don't work?
+        print(self.lrlLine.text)
+        print(self.lrlLine.text() >= "30")
+        if(self.lrlLine.text() >= "30" and self.lrlLine.text() <= "175"):
+            print("bruh")
+            self.userData[0] = self.lrlLine.text()
+      
+        if(self.urlLine.text() >= "50" and self.urlLine.text() <= "175"):
+            self.userData[1] = self.urlLine.text()
+        
+        if(self.aaLine.text() >= "0" and self.aaLine.text() <= "5"):
+            self.userData[2] = self.aaLine.text()
+        
+        if(self.apwLine.text() >= "0.1" and self.apwLine.text() <= "1.9"):
+            self.userData[3] = self.apwLine.text()
+        
+        if(self.vaLine.text() >= "0" and self.vaLine.text() <= "5"):
+            self.userData[4] = self.vaLine.text()
+        
+        if(self.vpwLine.text() >= "0.1" and self.vpwLine.text() <= "1.9"):
+            self.userData[5] = self.vpwLine.text()
+        
+        if(self.vrpLine.text() >= "150" and self.vrpLine.text() <= "500"):
+            self.userData[6] = self.vrpLine.text()
+        
+        if(self.arpLine.text() >= "150" and self.arpLine.text() <= "500"):
+            self.userData[7] = self.arpLine.text()
+        
+        self.displayParameter()
+        
+        with open('curUser.txt', 'r') as txt:
+            loggedUser = txt.readline()
+            txt.close()
+        
+        with open('%s.txt' % loggedUser, 'w') as txt:
+            txt.truncate(0)
+            for val in self.userData:
+                txt.write(val + '\n')
+            txt.close()
+   
 
 if __name__ == "__main__":    
     app = QApplication(sys.argv)

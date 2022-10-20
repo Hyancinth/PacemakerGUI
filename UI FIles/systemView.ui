@@ -126,89 +126,11 @@ background-color: rgba(255, 255, 255, 0);</string>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="1">
-      <widget class="QLabel" name="lrlValue">
-       <property name="styleSheet">
-        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
-color:rgb(255,255,255);
-border-radius:10px;
-background-color: rgba(255, 255, 255, 0);</string>
-       </property>
-       <property name="text">
-        <string>Current Value</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="lrl">
-       <property name="styleSheet">
-        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
-color:rgb(255,255,255);
-border-radius:10px;
-background-color: rgba(255, 255, 255, 0);</string>
-       </property>
-       <property name="text">
-        <string>Lower Rate Limit:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLabel" name="aaValue">
-       <property name="styleSheet">
-        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
-color:rgb(255,255,255);
-border-radius:10px;
-background-color: rgba(255, 255, 255, 0);</string>
-       </property>
-       <property name="text">
-        <string>Current Value</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QLineEdit" name="aaLine">
+     <item row="9" column="0">
+      <widget class="QLineEdit" name="vaLine">
        <property name="styleSheet">
         <string notr="true">background-color:rgb(255, 255, 255);
 border-radius: 10px;</string>
-       </property>
-      </widget>
-     </item>
-     <item row="14" column="0">
-      <widget class="QLabel" name="arp">
-       <property name="styleSheet">
-        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
-color:rgb(255,255,255);
-border-radius:10px;
-background-color: rgba(255, 255, 255, 0);</string>
-       </property>
-       <property name="text">
-        <string>ARP:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="14" column="1">
-      <widget class="QLabel" name="arpValue">
-       <property name="styleSheet">
-        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
-color:rgb(255,255,255);
-border-radius:10px;
-background-color: rgba(255, 255, 255, 0);</string>
-       </property>
-       <property name="text">
-        <string>Current Value</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="0">
-      <widget class="QLabel" name="apw">
-       <property name="styleSheet">
-        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
-color:rgb(255,255,255);
-border-radius:10px;
-background-color: rgba(255, 255, 255, 0);</string>
-       </property>
-       <property name="text">
-        <string>Atrial Pulse Width:</string>
        </property>
       </widget>
      </item>
@@ -246,16 +168,115 @@ background-color: rgba(255, 255, 255, 0);</string>
        </property>
       </widget>
      </item>
-     <item row="9" column="0">
-      <widget class="QLineEdit" name="vaLine">
+     <item row="1" column="0">
+      <widget class="QLineEdit" name="lrlLine">
        <property name="styleSheet">
         <string notr="true">background-color:rgb(255, 255, 255);
 border-radius: 10px;</string>
        </property>
       </widget>
      </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="lrlValue">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Current Value</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="lrl">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Lower Rate Limit:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLineEdit" name="aaLine">
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255);
+border-radius: 10px;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLabel" name="aaValue">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Current Value</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="apw">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Atrial Pulse Width:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="0">
+      <widget class="QLabel" name="arp">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>ARP:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="1">
+      <widget class="QLabel" name="arpValue">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Current Value</string>
+       </property>
+      </widget>
+     </item>
      <item row="8" column="1">
       <widget class="QLabel" name="vaValue">
+       <property name="styleSheet">
+        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
+color:rgb(255,255,255);
+border-radius:10px;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Current Value</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLabel" name="urlValue">
        <property name="styleSheet">
         <string notr="true">font: italic 14pt &quot;Calibri&quot;;
 color:rgb(255,255,255);
@@ -280,8 +301,8 @@ background-color: rgba(255, 255, 255, 0);</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QLabel" name="urlValue">
+     <item row="10" column="1">
+      <widget class="QLabel" name="vpwValue">
        <property name="styleSheet">
         <string notr="true">font: italic 14pt &quot;Calibri&quot;;
 color:rgb(255,255,255);
@@ -290,22 +311,6 @@ background-color: rgba(255, 255, 255, 0);</string>
        </property>
        <property name="text">
         <string>Current Value</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLineEdit" name="lrlLine">
-       <property name="styleSheet">
-        <string notr="true">background-color:rgb(255, 255, 255);
-border-radius: 10px;</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLineEdit" name="urlLine">
-       <property name="styleSheet">
-        <string notr="true">background-color:rgb(255, 255, 255);
-border-radius: 10px;</string>
        </property>
       </widget>
      </item>
@@ -322,19 +327,6 @@ background-color: rgba(255, 255, 255, 0);</string>
        </property>
       </widget>
      </item>
-     <item row="10" column="1">
-      <widget class="QLabel" name="vpwValue">
-       <property name="styleSheet">
-        <string notr="true">font: italic 14pt &quot;Calibri&quot;;
-color:rgb(255,255,255);
-border-radius:10px;
-background-color: rgba(255, 255, 255, 0);</string>
-       </property>
-       <property name="text">
-        <string>Current Value</string>
-       </property>
-      </widget>
-     </item>
      <item row="12" column="1">
       <widget class="QLabel" name="vrpValue">
        <property name="styleSheet">
@@ -348,16 +340,16 @@ background-color: rgba(255, 255, 255, 0);</string>
        </property>
       </widget>
      </item>
-     <item row="13" column="0">
-      <widget class="QLineEdit" name="vrpLine">
+     <item row="11" column="0">
+      <widget class="QLineEdit" name="vpwLine">
        <property name="styleSheet">
         <string notr="true">background-color:rgb(255, 255, 255);
 border-radius: 10px;</string>
        </property>
       </widget>
      </item>
-     <item row="11" column="0">
-      <widget class="QLineEdit" name="vpwLine">
+     <item row="13" column="0">
+      <widget class="QLineEdit" name="vrpLine">
        <property name="styleSheet">
         <string notr="true">background-color:rgb(255, 255, 255);
 border-radius: 10px;</string>
@@ -392,6 +384,14 @@ background-color: rgba(255, 255, 255, 0);</string>
      </item>
      <item row="15" column="0">
       <widget class="QLineEdit" name="arpLine">
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(255, 255, 255);
+border-radius: 10px;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLineEdit" name="urlLine">
        <property name="styleSheet">
         <string notr="true">background-color:rgb(255, 255, 255);
 border-radius: 10px;</string>
