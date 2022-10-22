@@ -13,8 +13,8 @@ class WelcomeScreen(QDialog):
    
         loadUi("UI Files/welcomeScreen.ui", self) #load welcome screen ui file
         
-        self.loginButton.clicked.connect(self.goToLogin) 
-        self.signupButton.clicked.connect(self.goToSignup)
+        self.loginButton.clicked.connect(self.goToLogin) #when login button is pressed
+        self.signupButton.clicked.connect(self.goToSignup) #when signup button is pressed
     
     def goToLogin(self):
         widget.setCurrentIndex(widget.currentIndex() + 1)
@@ -156,6 +156,9 @@ class SystemViewScreen(QDialog):
         super(SystemViewScreen, self).__init__()
         
         loadUi("UI Files/systemView.ui", self)
+        
+        self.error_label.setText("")
+        
         self.userData = []
         with open('curUser.txt', 'r') as txt:
             loggedUser = txt.readline()
@@ -182,32 +185,64 @@ class SystemViewScreen(QDialog):
     def updateValues(self):
        
         #First two don't work?
-        print(self.lrlLine.text)
-        print(self.lrlLine.text() >= "30")
-        if(self.lrlLine.text() >= "30" and self.lrlLine.text() <= "175"):
-            print("bruh")
+
+        if(int(self.lrlLine.text()) >= 30 and int(self.lrlLine.text()) <= 175):
             self.userData[0] = self.lrlLine.text()
-      
-        if(self.urlLine.text() >= "50" and self.urlLine.text() <= "175"):
+        elif(len(self.lrlLine.text()) == 0):
+            print("")
+        else:
+            self.error_label.setText("Please enter a valid value")
+     
+        if(len(self.urlLine.text()) != 0 and int(self.urlLine.text()) >= 50 and int(self.urlLine.text()) <= 175):
             self.userData[1] = self.urlLine.text()
-        
-        if(self.aaLine.text() >= "0" and self.aaLine.text() <= "5"):
+        elif(len(self.urlLine.text()) == 0):
+            print("")
+        else:
+            self.error_label.setText("Please enter a valid value")
+          
+  
+        if(len(self.aaLine.text()) != 0 and int(self.aaLine.text()) >= 0 and int(self.aaLine.text()) <= 5):
             self.userData[2] = self.aaLine.text()
+        elif(len(self.aaLine.text()) == 0):
+            print("")
+        else:
+            self.error_label.setText("Please enter a valid value")
         
-        if(self.apwLine.text() >= "0.1" and self.apwLine.text() <= "1.9"):
+   
+        if(len(self.apwLine.text()) != 0 and float(self.apwLine.text()) >= 0.1 and float(self.apwLine.text()) <= 1.9):
             self.userData[3] = self.apwLine.text()
+        elif(len(self.apwLine.text()) == 0):
+            print("")
+        else:
+            self.error_label.setText("Please enter a valid value")
         
-        if(self.vaLine.text() >= "0" and self.vaLine.text() <= "5"):
+        if(len(self.vaLine.text()) != 0 and int(self.vaLine.text()) >= 0 and int(self.vaLine.text()) <= 5):
             self.userData[4] = self.vaLine.text()
+        elif(len(self.vaLine.text()) == 0):
+            print("")
+        else:
+            self.error_label.setText("Please enter a valid value")
         
-        if(self.vpwLine.text() >= "0.1" and self.vpwLine.text() <= "1.9"):
+        if(len(self.vpwLine.text()) != 0 and float(self.vpwLine.text()) >= 0.1 and float(self.vpwLine.text()) <= 1.9):
             self.userData[5] = self.vpwLine.text()
+        elif(len(self.vpwLine.text()) == 0):
+            print("")
+        else:
+            self.error_label.setText("Please enter a valid value")
         
-        if(self.vrpLine.text() >= "150" and self.vrpLine.text() <= "500"):
+        if(len(self.vrpLine.text()) != 0 and int(self.vrpLine.text()) >= 150 and int(self.vrpLine.text()) <= 500):
             self.userData[6] = self.vrpLine.text()
+        elif(len(self.vrpLine.text()) == 0):
+            print("")
+        else:
+            self.error_label.setText("Please enter a valid value")
         
-        if(self.arpLine.text() >= "150" and self.arpLine.text() <= "500"):
+        if(len(self.arpLine.text()) != 0 and int(self.arpLine.text()) >= 150 and int(self.arpLine.text()) <= 500):
             self.userData[7] = self.arpLine.text()
+        elif(len(self.arpLine.text()) == 0):
+            print("")
+        else:
+            self.error_label.setText("Please enter a valid value")
         
         self.displayParameter()
         

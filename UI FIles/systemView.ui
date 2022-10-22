@@ -34,7 +34,7 @@
    <property name="styleSheet">
     <string notr="true">background-color:rgba(16,30,41,240);</string>
    </property>
-   <widget class="QLabel" name="errorLabel">
+   <widget class="QLabel" name="error_label">
     <property name="geometry">
      <rect>
       <x>190</x>
