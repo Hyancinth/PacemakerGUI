@@ -175,7 +175,7 @@ class SignupScreen(QDialog):
                     [7] = ARP
                     [8] = Serial Number, perhaps this value is obtained from the system view and saved to txt file as the screen loads in
                 '''
-                data = [30, 50, 0, 0.1, 0, 0.1, 150, 150, 12345]
+                data = [30, 50, 0.0, 0.1, 0.0, 0.1, 150, 150, 12345]
                 for val in data:
                     txt.write(str(val) + '\n')
                 txt.close()
@@ -226,10 +226,11 @@ class SystemViewScreen(QDialog):
     
     '''
     Update parameter values based on inputs 
+    Conditions for accepting inputs are based off table and intervals were decided by our group
     '''
     def updateValues(self):
 
-        if(int(self.lrlLine.text()) >= 30 and int(self.lrlLine.text()) <= 175):
+        if(len(self.lrlLine.text()) != 0 and int(self.lrlLine.text()) >= 30 and int(self.lrlLine.text()) <= 175):
             self.userData[0] = self.lrlLine.text()
         elif(len(self.lrlLine.text()) == 0):
             print("")
@@ -245,7 +246,7 @@ class SystemViewScreen(QDialog):
             self.error_label.setText("Please enter a valid value")
           
 
-        if(len(self.aaLine.text()) != 0 and int(self.aaLine.text()) >= 0 and int(self.aaLine.text()) <= 5):
+        if(len(self.aaLine.text()) != 0 and len(self.aaLine.text()) == 3 and float(self.aaLine.text()) >= 0.0 and float(self.aaLine.text()) <= 5.0):
             self.userData[2] = self.aaLine.text()
         elif(len(self.aaLine.text()) == 0):
             print("")
@@ -261,7 +262,7 @@ class SystemViewScreen(QDialog):
             self.error_label.setText("Please enter a valid value")
         
         
-        if(len(self.vaLine.text()) != 0 and int(self.vaLine.text()) >= 0 and int(self.vaLine.text()) <= 5):
+        if(len(self.vaLine.text()) != 0 and len(self.vaLine.text()) == 3 and float(self.vaLine.text()) >= 0.0 and float(self.vaLine.text()) <= 5.0):
             self.userData[4] = self.vaLine.text()
         elif(len(self.vaLine.text()) == 0):
             print("")
