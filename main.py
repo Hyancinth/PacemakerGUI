@@ -18,7 +18,6 @@ class WelcomeScreen(QDialog):
         self.loginButton.clicked.connect(self.goToLogin) #when login button is pressed
         self.signupButton.clicked.connect(self.goToSignup) #when signup button is pressed
     
-    
     '''
     Moves to login screen
     '''
@@ -74,7 +73,7 @@ class LoginScreen(QDialog):
                 print("Successfully logged in.")
                 self.errorLabel.setText("")
                 
-                self.logCurUser() 
+                self.logCurUser()
               
                 widget.setCurrentIndex(widget.currentIndex() + 2)
                 
