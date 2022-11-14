@@ -6,6 +6,8 @@ import PyQt5.QtWidgets as QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication, QWidget, QStackedWidget
 import sqlite3
 import os
+import serial
+
 
 class WelcomeScreen(QDialog):
     def __init__(self):
@@ -136,6 +138,19 @@ class SignupScreen(QDialog):
             conn = sqlite3.connect("userDatabase.db")
             cur = conn.cursor()
             
+            #Check for duplicate ysers
+            users = [username[0] for username in cur.execute("SELECT username FROM loginInfo")] #get list of users in the database
+          
+            for u in users:
+                if userName.lower() == u.lower():
+                    self.errorLabel.setText("User already exists")
+                    conn.commit()
+                    conn.close()
+            
+            #check for password containing only alpha-numeric character
+            if not password.isalnum():
+                self.errorLabel.setText("Use only alpha-numeric characters for password")
+            
             #Check if there are 10 entries in the database 
             cur.execute('SELECT COUNT(*) FROM loginInfo')
             count = cur.fetchone()[0]
@@ -210,6 +225,12 @@ class SystemViewScreen(QDialog):
         self.displayParameter()
         
         self.saveProfileBtn.clicked.connect(self.updateValues) #When Save Profile Button is clicked
+        
+        #Button Modes 
+        self.aooBtn.clicked.connect(self.aoo)
+        self.vooBtn.clicked.connect(self.voo)
+        self.aaiBtn.clicked.connect(self.aai)
+        self.vviBtn.clicked.connect(self.vvi)
     
     '''
     Updates labels with parameter values
@@ -304,7 +325,192 @@ class SystemViewScreen(QDialog):
             for val in self.userData:
                 txt.write(val + '\n')
             txt.close()
-   
+
+    def aoo(self):
+        self.pacingMode.setText("aoo")
+        
+        #Disable Line edits that shouldn't be used in this mode
+        self.vaLine.setDisabled(True)
+        self.vpwLine.setDisabled(True)
+        self.vrpLine.setDisabled(True)
+        self.arpLine.setDisabled(True)
+        
+        self.va.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:red;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+    
+        self.vpw.setStyleSheet('''
+                font: italic 16pt "Calibri";
+                color:red;
+                border-radius:10px;
+                background-color: rgba(255, 255, 255, 0);
+                ''')
+
+        self.vrp.setStyleSheet('''
+                font: italic 16pt "Calibri";
+                color:red;
+                border-radius:10px;
+                background-color: rgba(255, 255, 255, 0);
+                ''')
+        self.arp.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:red;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+
+    def voo(self):
+        self.pacingMode.setText("voo")
+        
+        #Disable Line edits that shouldn't be used in this mode
+        self.aaLine.setDisabled(True)
+        self.apwLine.setDisabled(True)
+        self.vrpLine.setDisabled(True)
+        self.arpLine.setDisabled(True)
+        
+        self.aa.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:red;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+        self.apw.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:red;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+
+        self.vrp.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:red;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+
+        self.arp.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:red;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+        #white
+        self.va.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:white;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+
+        self.vpw.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:white;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+    def aai(self):
+        self.pacingMode.setText("aai")
+        
+        #Disable Line edits that shouldn't be used in this mode
+        self.vaLine.setDisabled(True)
+        self.vpwLine.setDisabled(True)
+        self.vrpLine.setDisabled(True)
+        
+        self.va.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:red;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+
+        self.vpw.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:red;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+
+        self.vrp.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:red;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+    
+        #white
+        self.aa.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:white;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+        self.apw.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:white;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+
+        self.arp.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:white;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+    
+    def vvi(self):
+        self.pacingMode.setText("vvi")
+        
+        #Disable Line edits that shouldn't be used in this modes
+        self.aaLine.setDisabled(True)
+        self.apwLine.setDisabled(True)
+        self.arpLine.setDisabled(True)
+        
+        self.aa.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:red;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+        
+        self.apw.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:red;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+        
+        self.arp.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:red;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+        
+        #white
+        self.va.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:white;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+
+        self.vpw.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:white;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
+
+        self.vrp.setStyleSheet('''
+                        font: italic 16pt "Calibri";
+                        color:white;
+                        border-radius:10px;
+                        background-color: rgba(255, 255, 255, 0);
+                        ''')
 
 if __name__ == "__main__":    
     app = QApplication(sys.argv)

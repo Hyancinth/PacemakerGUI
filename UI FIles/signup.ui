@@ -181,9 +181,9 @@ border-radius:10px;</string>
    <widget class="QLabel" name="errorLabel">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>405</x>
       <y>570</y>
-      <width>300</width>
+      <width>390</width>
       <height>31</height>
      </rect>
     </property>
