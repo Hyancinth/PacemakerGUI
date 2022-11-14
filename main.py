@@ -371,6 +371,10 @@ class SystemViewScreen(QDialog):
         self.vrpLine.setDisabled(True)
         self.arpLine.setDisabled(True)
         
+        self.vaLine.setDisabled(False)
+        self.vpwLine.setDisabled(False)
+
+        
         self.aa.setStyleSheet('''
                         font: italic 16pt "Calibri";
                         color:red;
@@ -418,6 +422,11 @@ class SystemViewScreen(QDialog):
         self.vaLine.setDisabled(True)
         self.vpwLine.setDisabled(True)
         self.vrpLine.setDisabled(True)
+        
+        self.aaLine.setDisabled(False)
+        self.apwLine.setDisabled(False)
+        self.arpLine.setDisabled(False)
+        
         
         self.va.setStyleSheet('''
                         font: italic 16pt "Calibri";
@@ -468,6 +477,11 @@ class SystemViewScreen(QDialog):
         self.aaLine.setDisabled(True)
         self.apwLine.setDisabled(True)
         self.arpLine.setDisabled(True)
+        
+        self.vaLine.setDisabled(False)
+        self.vpwLine.setDisabled(False)
+        self.vrpLine.setDisabled(False)
+        
         
         self.aa.setStyleSheet('''
                         font: italic 16pt "Calibri";
