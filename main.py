@@ -8,6 +8,8 @@ import sqlite3
 import os
 import serial
 
+import serial.tools.list_ports
+
 
 class WelcomeScreen(QDialog):
     def __init__(self):
@@ -176,6 +178,8 @@ class SignupScreen(QDialog):
     def createText(self):
         uName = self.username_line.text() #get username
         try:
+            ports = serial.tools.list_ports.comports()
+            data = [30, 50, 0.0, 0.1, 0.0, 0.1, 150, 150, ports[0].serial_number]
             with open('%s.txt' % uName, 'w') as txt:
                 '''
                     Format of data array 
@@ -187,9 +191,8 @@ class SignupScreen(QDialog):
                     [5] = Ventricular Pulse Width 
                     [6] = VRP
                     [7] = ARP
-                    [8] = Serial Number, perhaps this value is obtained from the system view and saved to txt file as the screen loads in
+                    [8] = Serial Number
                 '''
-                data = [30, 50, 0.0, 0.1, 0.0, 0.1, 150, 150, 12345]
                 for val in data:
                     txt.write(str(val) + '\n')
                 txt.close()
